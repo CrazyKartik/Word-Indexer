@@ -1,0 +1,14 @@
+SRC_DIR=./src
+INC_DIR=./src
+SOURCE=$(SRC_DIR)/*.cpp
+MYPROGRAM=word_indexer.out
+CC=g++
+FLAGS=-std=c++0x -g -lpthread -Wall
+
+all: $(MYPROGRAM)
+
+$(MYPROGRAM): $(SOURCE)
+	$(CC) $(SOURCE) -I$(INC_DIR) -o$(MYPROGRAM) $(FLAGS)
+
+clean:
+	rm -rf $(MYPROGRAM)
